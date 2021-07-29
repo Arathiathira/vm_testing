@@ -56,7 +56,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   location            = azurerm_resource_group.myrg.location
   size                = "Standard_DS1_v2"
   admin_username      = "adminuser"
-  admin_password      = "wow..."
+  admin_password      = "Abc!23456"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,

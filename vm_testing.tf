@@ -56,14 +56,17 @@ resource "azurerm_linux_virtual_machine" "example" {
   location            = azurerm_resource_group.myrg.location
   size                = "Standard_E8-2ds v4"
   admin_username      = "adminuser"
+  admin_password      = "wow..."
+  disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
 
-   admin_ssh_key {
+  /* admin_ssh_key {
      username   = "adminuser"
      public_key = /home/{username}/.ssh/authorized_keys  //file("~/.ssh/id_rsa.pub")
    }
+    */
 
   os_disk {
     caching              = "ReadOnly"
